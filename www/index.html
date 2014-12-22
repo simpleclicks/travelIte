@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <style>
+      .angular-google-map-container {
+          width: 100%;
+          height: 504px;
+      }
+    </style>
+
+    <link href="/css/preview-frame.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+
+    <script>
+// Ionic Starter App
+
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.services' is found in services.js
+// 'starter.controllers' is found in controllers.js
+angular.module('app', ['ionic'])
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
+    
+    .state('page11', {
+      url: '',
+      templateUrl: 'page11.html'
+    })
+    
+    .state('page12', {
+      url: '/home',
+      templateUrl: 'page12.html'
+    })
+    
+    .state('page13', {
+      url: '/timeline',
+      templateUrl: 'page13.html'
+    })
+    
+    .state('page14', {
+      url: '/travelmates',
+      templateUrl: 'page14.html'
+    })
+    
+    .state('page15', {
+      url: '/persondetails',
+      templateUrl: 'page15.html'
+    })
+    ;
+
+  // if none of the above states are matched, use this as the fallback
+  
+  $urlRouterProvider.otherwise('');
+  
+
+});
+
+
+    </script>
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+    <div>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </div>
+</div>
+<script id="page11.html" type="text/ng-template">
+<ion-view title="Login">
+    <ion-content padding="true" class="has-header">
+        <h2>Login</h2>
+        <a href="#/home" class="button button-calm button-block">Facebook</a>
+    </ion-content>
+</ion-view></script>
+<script id="page12.html" type="text/ng-template">
+<ion-view title="Home">
+    <ion-content padding="true" class="has-header">
+        <a href="#/timeline" class="button button-calm button-block">Create Trip</a>
+        <div class="spacer" style="width: 300px; height: 29px;"></div>
+        <h2>Your Trips</h2>
+        <ion-list>
+            <ion-item href="#/timeline">Trip 1</ion-item>
+            <ion-item href="#/timeline">Trip 2</ion-item>
+            <ion-item href="#/timeline">Trip 3</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view></script>
+<script id="page13.html" type="text/ng-template">
+<ion-view title="TimeLine">
+    <ion-content padding="true" class="has-header">
+        <button class="button button-stable button-icon">Tap me!</button>
+        <div class="list card">
+            <div class="item item-divider">Travel info</div>
+            <div class="item item-body">
+                <a href="#/travelmates" class="button button-stable button-block">Tap me!</a>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Stay</div>
+            <div class="item item-body">
+                <a href="#/travelmates" class="button button-stable button-block">Tap me!</a>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Activity</div>
+            <div class="item item-body">
+                <a href="#/travelmates" class="button button-stable button-block">Tap me!</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view></script>
+<script id="page14.html" type="text/ng-template">
+<ion-view title="TravelMates">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-item href="#/persondetails">Ameya</ion-item>
+            <ion-item href="#/persondetails">Sheetal</ion-item>
+            <ion-item href="#/persondetails">Sushim</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view></script>
+<script id="page15.html" type="text/ng-template">
+<ion-view title="[Person Name]">
+    <ion-content padding="true" class="has-header">
+        <div>
+            <p>
+                Selected activity details for the person.
+            </p>
+        </div>
+    </ion-content>
+</ion-view></script>
+  </body>
+</html>
