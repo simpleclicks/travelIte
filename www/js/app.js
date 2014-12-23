@@ -29,12 +29,20 @@ angular.module('travelIte', ['ionic','travelIte.controllers'])
 
             .state('home', {
                 url: '/home',
-                templateUrl: 'templates/home.html'
+                templateUrl: 'templates/home.html',
+                controller: 'HomeCtrl'
+            })
+
+            .state('wizard', {
+                url: '/wizard',
+                templateUrl: 'templates/wizard.html',
+                controller: 'WizardCtrl'
             })
 
             .state('timeline', {
                 url: '/timeline',
-                templateUrl: 'templates/timeline.html'
+                templateUrl: 'templates/timeline.html',
+                controller: 'TimelineCtrl'
             })
 
             .state('travelmates', {
@@ -49,7 +57,5 @@ angular.module('travelIte', ['ionic','travelIte.controllers'])
         ;
 
         $urlRouterProvider.otherwise('/login');
-
-
     });
 
