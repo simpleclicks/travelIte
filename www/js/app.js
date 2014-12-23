@@ -59,7 +59,7 @@ angular.module('app', ['ionic'])
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/login');
 
 
     })
