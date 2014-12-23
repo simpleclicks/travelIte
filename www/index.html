@@ -11,11 +11,12 @@
           height: 504px;
       }
     </style>
-      
+      <script src="lib/OpenFB/openfb.js"></script>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <script src="js/app.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -23,70 +24,6 @@
 
 
     <script>
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic'])
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
-  $stateProvider
-    
-    .state('page11', {
-      url: '',
-      templateUrl: 'page11.html'
-    })
-    
-    .state('page12', {
-      url: '/home',
-      templateUrl: 'page12.html'
-    })
-    
-    .state('page13', {
-      url: '/timeline',
-      templateUrl: 'page13.html'
-    })
-    
-    .state('page14', {
-      url: '/travelmates',
-      templateUrl: 'page14.html'
-    })
-    
-    .state('page15', {
-      url: '/persondetails',
-      templateUrl: 'page15.html'
-    })
-    ;
-
-  // if none of the above states are matched, use this as the fallback
-  
-  $urlRouterProvider.otherwise('');
-  
-
-});
-
 
     </script>
   </head>
@@ -99,14 +36,18 @@ angular.module('app', ['ionic'])
         <ion-nav-view></ion-nav-view>
     </div>
 </div>
-<script id="page11.html" type="text/ng-template">
+<script id="login.html" type="text/ng-template">
 <ion-view title="Login">
     <ion-content padding="true" class="has-header">
         <h2>Login</h2>
-        <a href="#/home" class="button button-calm button-block">Facebook</a>
+        <label class="item">
+            <button class="button button-block button-positive" ng-click="fbLogin()">
+                Login with Facebook
+            </button>
+        </label>
     </ion-content>
 </ion-view></script>
-<script id="page12.html" type="text/ng-template">
+<script id="home.html" type="text/ng-template">
 <ion-view title="Home">
     <ion-content padding="true" class="has-header">
         <a href="#/timeline" class="button button-calm button-block">Create Trip</a>
@@ -119,7 +60,7 @@ angular.module('app', ['ionic'])
         </ion-list>
     </ion-content>
 </ion-view></script>
-<script id="page13.html" type="text/ng-template">
+<script id="timeline.html" type="text/ng-template">
 <ion-view title="TimeLine">
     <ion-content padding="true" class="has-header">
         <button class="button button-stable button-icon">Tap me!</button>
@@ -143,7 +84,7 @@ angular.module('app', ['ionic'])
         </div>
     </ion-content>
 </ion-view></script>
-<script id="page14.html" type="text/ng-template">
+<script id="travelmates.html" type="text/ng-template">
 <ion-view title="TravelMates">
     <ion-content padding="true" class="has-header">
         <ion-list>
@@ -153,7 +94,7 @@ angular.module('app', ['ionic'])
         </ion-list>
     </ion-content>
 </ion-view></script>
-<script id="page15.html" type="text/ng-template">
+<script id="persondetails.html" type="text/ng-template">
 <ion-view title="[Person Name]">
     <ion-content padding="true" class="has-header">
         <div>
