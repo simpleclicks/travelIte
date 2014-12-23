@@ -1,4 +1,4 @@
-angular.module('app', ['ionic'])
+angular.module('travelIte', ['ionic','travelIte.controllers'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -51,19 +51,5 @@ angular.module('app', ['ionic'])
         $urlRouterProvider.otherwise('/login');
 
 
-    })
-    .controller('LoginCtrl', function($scope, $state) {
-        $scope.fbLogin = function() {
-            openFB.login(
-                function(response) {
-                    if (response.status === 'connected') {
-                        console.log('Facebook login succeeded');
-                        $state.go('home');
-                    } else {
-                        alert('Facebook login failed');
-                    }
-                },
-                {scope: 'email,publish_actions'});
-        }
     });
 
